@@ -1,3 +1,3 @@
 #Javascript
 
-**Javascript** is a powerfull *web* programming language.
+**Javascript** is a powerful *web* programming language.

@@ -26,7 +26,7 @@ def wiki(request, title):
     page_content = util.get_entry(title)
 
     if page_content == None:
-        return render(request, "encyxlopedia/error.html", {
+        return render(request, "encyclopedia/error.html", {
             "error": "Page not found"
         })
     else:

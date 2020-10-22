@@ -1,0 +1,32 @@
+textarea {
+    min-height: 400px;
+}
+
+#message{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.mail-list{
+    padding: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.mail-list:hover{
+    background-color: #0277bd !important;
+    color: white !important;
+}
+
+.mail-list .mail-list-description > *{
+    display: inline;
+    margin-right: 10px;
+}
+

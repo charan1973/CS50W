@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark" style='background-color: #3E4458;'>
+                <a class="navbar-brand" href="#">Books</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav navbar-nav navbar-center">
+                  <li><h3 class="welcome-message">{% block welcome %}{% endblock %}</h3></li>
+                </ul>
+                <div class="collapse navbar-collapse w-100 order-3 dual-collapse2" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      {% block navbarop1 %}{% endblock %}
+                    </li>
+                    <li class="nav-item active">
+                        {% block navbarop2 %}{% endblock %}
+                      </li>
+                  </ul>
+                </div>
+              </nav>
+              {% if get_flashed_messages() %}
+              <div class="alert alert-info text-center" role="alert">
+                  {{ get_flashed_messages() | join(" ") }}
+              </div>
+          {% endif %}
+    {% block body %}{% endblock %}
+</body>
+</html>

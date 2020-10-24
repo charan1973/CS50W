@@ -1,0 +1,126 @@
+html, body {
+     overflow-x: hidden; 
+    }
+.loginorreg { 
+    border-radius: 25px;
+    margin: 0 auto; 
+    width: 600px;
+    border: groove;
+    padding: 50px;    
+}
+.navbar{
+    margin-bottom: 30px;
+}
+.login{
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 21px;
+}
+
+body{
+    font-family: Product Sans, Courier New;
+}
+
+label{
+    font-weight: bold;
+}
+
+.nav-link{
+    font-weight:bold;
+}
+
+.logbtn{
+    margin-top: 10px;
+    width: 500px;
+}
+.createorlog{
+    margin-top: 20px;
+    text-align: center;
+}
+.search{
+    margin: 0 auto; 
+    width: 600px;
+}
+.searchbtn{
+    background-color: #b3ffde;
+    color: black;
+}
+.searchbtn:hover{
+    background-color: #52d19a;
+    color: black;
+}
+.searchbar:focus, .btn-outline-secondary:focus{
+    border-color: #f88379;
+    box-shadow: 0 0 0 0.2rem rgba(248, 131, 121, 0.25);
+}
+.searchbardiv{
+    width: 300px;
+    margin: 0 auto;
+}
+.search-head{
+    text-align: center;
+}
+
+small{
+    text-align: center;
+}
+
+.error h1, .error a, .error, .resultbook{
+    font-weight: bolder;
+    text-align: center;
+}
+
+.navbar-nav.navbar-center{
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    color: aliceblue;
+}
+ .delete, .delete h3{
+     text-align: center;
+     font-weight: bolder;
+ }
+
+.card-text{
+    font-weight: bold;
+}
+
+.viewcard{
+    height: 200px;
+    width: 400px;
+}
+
+.commentbox{
+    border-radius: 10px;
+    border: groove;
+    padding: 20px;
+}
+.right{
+    margin-left: 50px;
+}
+.container{
+    margin-top: 15px;
+}
+.imgcenter{
+    margin-left: 40px;
+}
+@media only screen and (max-width: 1000px){
+    .loginorreg{
+        width: 95%;
+    }
+    .logbtn{
+        width: 95%;
+    }
+    .viewbook{
+        margin-left: 13px;
+    }
+    .right{
+        margin-left: 0px;
+    }
+    .imgcenter{
+        margin-left: 0px;
+    }
+    .infocard{
+        width: 90%;
+    }
+}

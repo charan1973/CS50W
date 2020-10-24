@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}Books: Search{% endblock %}
+
+{% block welcome %} Hi, {{name}}! {% endblock %}
+
+{% block navbarop1 %}<a class="nav-link" href="{{url_for('logout')}}">Logout</span></a>{% endblock %}
+{% block navbarop2 %}<a class="nav-link" href="{{url_for('delete')}}">Delete</a>{% endblock %}
+
+{% block body %}
+<h3 class="search-head">Search Here</h3>
+<form action="result" method="POST">
+    <div class="input-group mb-3 searchbardiv">
+        <input type="text" class="form-control searchbar" name="searchbook" placeholder="ISBN, Title, Author or Year">
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary searchbtn" type="submit">Search</button>
+    </div>
+    </div>
+</form>
+<small class="form-text text-muted">Example: 0517053616, The Complete Works, William Shakespeare or 1623</small>
+{% endblock %}

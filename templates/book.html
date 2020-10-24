@@ -1,0 +1,74 @@
+{% extends 'layout.html' %}
+
+{% block title %}Book: {{ isbn[2] }}{% endblock %}
+
+{% block navbarop1 %}<a class="nav-link" href="{{url_for('search')}}">Search</span></a>{% endblock %}
+{% block navbarop2 %}<a class="nav-link" href="{{url_for('logout')}}">Logout</a>{% endblock %}
+
+{% block body %}
+<div align="center" class="imgcenter">
+        <img src="http://covers.openlibrary.org/b/isbn/{{isbn[1]}}-M.jpg" alt=""><br><br>
+    <a class="btn btn-primary" href="http://www.goodreads.com/book/isbn/{{ isbn[1] }}" target="_blank">See Goodreads page</a>
+</div>
+<div class="container infocard" align="center">
+    <div class="row">
+        <div class="col-sm right">
+        <div class="card border-dark mb-3 viewcard">
+                <b><div class="card-header">Title: {{ isbn[2] }}</div></b>
+                <div class="card-body text-dark">
+                  <h5 class="card-title">ISBN: {{ isbn[1] }}</h5>
+                  <h5 class="card-title">Author: {{ isbn[3] }}</h5>
+                  <h5 class="card-title">Year Published: {{ isbn[4] }}</h5>
+                </div>
+              </div>
+              </div>
+                    <div class="col-sm">
+                            <div class="card border-dark mb-3 viewcard">
+                                    <b><div class="card-header">What Goodreads Say</div></b>
+                                    <div class="card-body text-dark">
+                                      <h5 class="card-title">No. of ratings: {{gbook['work_ratings_count']}}</h5>
+                                      <h5 class="card-title">Avg. Ratings: {{gbook['average_rating']}}</h5>
+                                      <h5 class="card-title">No. of reviews: {{gbook['work_reviews_count']}}</h5>
+                                    </div>
+                                  </div>
+                                  </div>
+                                  </div>
+                                  </div>
+<div class="container">
+                                <h3 class="user-review"><b>Review Here</b></h3>
+                                
+                                <form action="/book/{{isbn[1]}}" method="POST" class="commentbox">
+                                <div class="row">
+                                  <div class = "col-sm">
+                                <div class="form-group">
+                                  <label>Comment Here</label>
+                                    <input class="form-control" type="text" name="comment" placeholder="Comment Here">
+                                </div></div>
+                              <div class = "col-sm">
+                                <label>Rate Here</label>
+                              <select name="rate" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                              </select></div>
+                              </div>
+                              <div class = "col-sm text-right">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                              </div>
+                              </form>
+                              <h3 class="user-review"><b>Reviews</b></h3>
+
+      <h4>Reviews will appear here</h4>
+    {% for items in reviews %}
+    <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{ items[0] }} commented:</h5>
+          <p class="card-text">Rated: {{ items[2] }}</p>
+          <p class="card-text">{{ items[0] }} Says {{ items[1] }}</p>
+          <p class="card-text"><small class="text-muted">Added: {{ items[3] }}</small></p>
+        </div>
+      </div>
+      {% endfor %}
+{% endblock %}

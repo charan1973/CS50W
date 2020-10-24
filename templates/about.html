@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block navbarop1 %}<a class="nav-link" href="{{url_for('index')}}">Log In</a>{% endblock %}
+{% block navbarop2 %}<a class="nav-link" href="{{url_for('register')}}">Register</a>{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h3><b>About Site</b></h3>
+    <p>
+        This is a site for project1 from CS50W on EDX. This is site is for book review. The site has 5000 books for review.
+        People can search the site only if they are logged in. People can delete the account if they don't want to use the site anymore.
+         Users can logout there session will be cleared when the logout. Users cannot login multiple times in a 
+        session as the index page cleares the session when reloaded. Users can submit reviews for book and rate it out of 5.
+        Users are restricted to submit blank review and also restricted to review multiple times per book. Api can be called using /api/+<isbn> 
+            but the isbn with no reviews or no book at all will return an error .No review book error is  because rowproxy don't allow value assigning using python code.  
+            Requirements are freezed into requirements.txt. Site is hosted on heroku's free tier plan. <br>
+            To see my project0 Click <a href="https://charan1973.github.io/testproject0">here</a>.
+        </p>
+    <h3><b>What's included?</b></h3>
+    <ul>
+        <li>Users can register and will be automatically returned to login page.</li>
+        <li>Users can Login.</li>
+        <li>Search page has delete and logout button. Users an search from a library of 5000 books.</li>
+        <li>Results page shows all the books that matches the search but limits to 10 books.</li>
+        <li>Book page contains book cover on top and a link to goodreads page of the book.</li>
+        <li>Two blocks in books page shows the info in database and ratings from goodreads API.</li>
+        <li>Has a review box and shows reviews.</li>
+    </ul>
+</div>
+{% endblock %}

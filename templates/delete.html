@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}Delete Account{% endblock %}
+
+{% block navbarop1 %}<a class="nav-link" href="{{url}}">Go Back</a>{% endblock %}
+
+{% block body %}
+
+<form action="delete" method="POST" class="delete">
+<h3>Are you sure?You wanna delete your account.</h3><br>
+<button type="submit"class="btn btn-outline-secondary searchbtn">delete</button>
+</form>
+
+{% endblock %}

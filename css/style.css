@@ -1,0 +1,49 @@
+
+nav {
+  margin-bottom: 30px;
+}
+
+body {
+  background-color: #edfcdc;
+}
+
+.caption-nav {
+  text-align: center;
+  font-weight: bold;
+}
+
+.makebold {
+  font-weight: bold;
+}
+
+.profile-photo {
+  float: right;
+  width: 170px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding: 7px;
+  border: 1px solid black;
+  text-align: center;
+  font-weight: bold;
+}
+
+#about-site{
+  margin-left: 10px;
+}
+.page-content{
+  margin-left: 10px;
+}
+p {
+  width:99%;
+  text-align:justify;
+  }
+#about-site h1{
+   text-align:center;
+}
+.page-content h3{
+  color: #950740;
+  text-decoration: none;
+}
+.col-sm a:hover{
+  color: #BC4639;
+}

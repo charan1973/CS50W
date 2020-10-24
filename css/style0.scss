@@ -1,0 +1,66 @@
+$body_color: #f5e7c1;
+/*sass variable*/
+$h3_color: #15DB95;
+/*sass variable*/
+$h5_color: #501B1D;
+/*sass variable*/
+$med_back_color: #fcd1ca;
+.page-content {
+  margin-left: 10px;
+}
+
+body {
+  /*sass nesting*/
+  background: $body_color;
+
+  h1 {
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  h3 {
+    color: $h3_color;
+  }
+
+  h5 {
+    color: $h5_color;
+  }
+
+  h3,
+  h5 {
+    font-weight: bold;
+  }
+}
+
+p {
+  width: 99%;
+  text-align: justify;
+  margin-top: 10px;
+}
+
+.iot_resize {
+  padding-top: 20px;
+  display: block;
+  margin: 0 auto;
+  height: 600px;
+}
+
+img {
+  @extend .iot_resize;
+  /* sass inheritance*/
+  height: 300px;
+}
+
+li {
+  margin: 10px 0;
+}
+@media only screen and (max-width: 720px) {
+  /*@media query used*/
+  body {
+    background-color: $med_back_color;
+  }
+
+  .iot_resize {
+    width: 99%;
+  }
+}

@@ -1,0 +1,15 @@
+{% extends 'network/layout.html' %}
+
+{% block title %}
+Following
+{% endblock %}
+
+{% block body %}
+<h1 class="jumbotron">Posts from following</h1>
+<div id="posts">
+  {% include 'network/components/posts.html' with posts=posts %}
+  {% include 'network/components/paginator.html' with page=posts %}
+</div>
+</div>
+
+{% endblock %}

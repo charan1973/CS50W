@@ -1,0 +1,34 @@
+<div class="container">
+    {% for post in posts %}
+    <div class="card">
+        <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <p class="small text-muted"><a href="{% url 'profile' post.created_by.id %}">{{post.created_by}}</a></p>
+            <p class="small text-muted">{{post.created_at}} UTC</p>
+        </div>
+          <p class="card-text" id="content-{{post.id}}">{{post.content}}</p>
+          <p>
+              <i
+              {% if request.user in post.like.all %}
+              class="fa-heart fas like-btn"
+              {% else %}
+              class="far fa-heart like-btn"
+              {% endif %}
+              data-likeuser={{request.user.id}}
+              data-likepost={{post.id}}
+              ></i>
+              <span>{{post.like.count}}</span>
+          </p>
+
+          {% if request.user == post.created_by %}
+            <div class="card-footer bg-transparent">  
+              <button class="btn btn-outline-dark float-right edit-post" data-btnvalue="{{post.id}}">Edit</button>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% empty %}
+        <h5>No posts yet. Be the first one to post.
+        </h5>
+    {% endfor %}
+</div>

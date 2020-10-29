@@ -1,0 +1,23 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+{% if request.user.username %}
+<h1 class="jumbotron">All posts</h1>
+<div class="container">
+    <div class="border rounded add-post-div">
+        <h3>Add post</h3>
+        <form class="form-group" id="add-post">
+            <textarea name="post_content" maxlength="255" id="post_content" rows="3" class="form-control"></textarea>
+            <input type="submit" value="POST" class="btn btn-primary float-right">
+        </form>
+    </div>
+{% endif %}
+<div id="posts">
+    {% include 'network/components/posts.html' with posts=posts %}
+    {% include 'network/components/paginator.html' with page=posts %}
+</div>
+    </div>
+</div>
+{% endblock %}

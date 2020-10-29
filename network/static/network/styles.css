@@ -1,0 +1,28 @@
+#message{
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.card{
+    margin-bottom: 20px;
+}
+
+.container{
+    padding: 20px;
+}
+
+
+.add-post-div{
+    padding: 30px;
+}
+
+.fas{
+    color: #f50058;
+}
+
+a, a:hover{
+    color: #333;
+    text-decoration: none;
+}

@@ -1,0 +1,32 @@
+{% extends 'network/layout.html' %}
+
+{% block title %}
+Profile: {{user.username}}
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+  <p class="text-muted">Profile page</p>
+  <h1 class="display-4">{{user_profile.username}}</h1>
+  <div class="d-flex">
+    <p class="lead p-4">Followers: <span id="followers-count">{{followers.count}}</span></p>
+    <p class="lead p-4">Following: <span id="following-count">{{user_profile.following.count}}</span></p>
+  </div>
+  {% if user != user_profile %}
+  {% if request.user in followers.all %}
+    <button class="btn btn-outline-primary" id="follow-btn" data-following="true" data-user="{{ user_profile.id }}">
+      Unfollow 
+    </button>
+  {% else %}
+    <button class="btn btn-outline-primary" id="follow-btn" data-followings="false" data-user="{{user_profile.id}}">
+      Follow
+    </button>
+    {% endif %}
+    {% endif %}
+</div>
+<div id="posts">
+  {% include 'network/components/posts.html' with posts=posts %}
+  {% include 'network/components/paginator.html' with page=posts %}
+</div>
+</div>
+{% endblock %}
